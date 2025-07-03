@@ -1,137 +1,217 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Renavis Puppies</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Renavis Puppies | Healthy Dachshunds for Adoption</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 0;
-      text-align: center;
+      margin: 0; padding: 0;
+      background-color: #fff7f0;
+      color: #333;
     }
     header {
       background-color: #a0522d;
       color: white;
+      padding: 20px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    header img.logo {
+      height: 50px;
+      border-radius: 8px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    .hero {
+      text-align: center;
       padding: 30px 10px;
+    }
+    .hero img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+      display: block;
+    }
+    .hero h2 {
+      font-size: 1.8rem;
+      margin: 15px 0 10px;
+      color: #6b4226;
+    }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #4d3c30;
     }
     section {
       padding: 20px;
       max-width: 900px;
-      margin: auto;
-      background: white;
-      margin-bottom: 30px;
-      border-radius: 8px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      margin: 0 auto 30px;
     }
-    ul {
+    .pricing {
+      background-color: #fff0e0;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .pricing h2 {
+      margin-top: 0;
+      color: #8b5e3c;
+      text-align: center;
+    }
+    .pricing ul {
       list-style: none;
       padding: 0;
+      max-width: 400px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      color: #5a3e26;
+    }
+    .pricing ul li {
+      padding: 8px 0;
+      border-bottom: 1px solid #d9b99b;
+      display: flex;
+      justify-content: space-between;
+      font-weight: 600;
+    }
+    .puppies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .puppy-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      width: 250px;
+      padding: 15px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .puppy-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+    .puppy-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    .puppy-card h3 {
+      margin: 10px 0 5px;
+      color: #8b5e3c;
+    }
+    .contact {
+      background-color: #fff0e0;
+      border-radius: 10px;
+      text-align: center;
+      padding: 25px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: 0 auto 40px;
+    }
+    .contact h2 {
+      color: #8b5e3c;
+      margin-bottom: 15px;
+    }
+    .contact a {
+      color: #a0522d;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
     }
     footer {
       background-color: #a0522d;
       color: white;
-      padding: 10px;
-      margin-top: 40px;
-    }
-    a {
-      color: #a0522d;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .puppy-list {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-    .puppy-card {
-      width: 280px;
-      border: 1px solid #ccc;
-      padding: 15px;
-      background: white;
-      border-radius: 6px;
-      box-shadow: 0 0 6px rgba(0,0,0,0.1);
       text-align: center;
+      padding: 15px 10px;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
     }
-    .puppy-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 6px;
-    }
-    .puppy-card h3 {
-      margin: 12px 0 6px 0;
-      color: #a0522d;
-    }
-    .puppy-card p {
-      margin: 4px 0;
-      font-size: 14px;
-      color: #444;
+    @media (max-width: 600px) {
+      .puppies {
+        flex-direction: column;
+        align-items: center;
+      }
+      .puppy-card {
+        width: 90%;
+      }
+      header {
+        flex-direction: column;
+        gap: 10px;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Welcome to Renavis Puppies</h1>
-    <p>Your trusted source for healthy, happy Dachshunds</p>
+    <img src="images/logo.png" alt="Renavis Puppies Logo" class="logo" />
+    <h1>Renavis Puppies</h1>
   </header>
 
-  <section>
-    <h2>About Us</h2>
-    <p>At Renavis Puppies, we focus on raising well-socialized, healthy Dachshund puppies. Our goal is to match each puppy with a loving home where they will be cherished and cared for.</p>
+  <section class="hero">
+    <img src="images/hero.jpg" alt="Cute Dachshund Puppy" />
+    <h2>Welcome to Renavis Puppies</h2>
+    <p>We specialize in healthy, playful, and vet-checked Dachshund puppies — raised with love and ready for forever homes.</p>
   </section>
 
-  <section>
-    <h2>What We Offer</h2>
+  <section class="pricing">
+    <h2>Dachshund Pricing by Type</h2>
     <ul>
-      <li>✔ Healthy, vet-checked Dachshund puppies</li>
-      <li>✔ Friendly and supportive guidance throughout adoption</li>
-      <li>✔ Delivery and pickup options available</li>
+      <li><span>Miniature Dachshund</span> <span>$500</span></li>
+      <li><span>Long-Haired Dachshund</span> <span>$600</span></li>
+      <li><span>Smooth Coat Dachshund</span> <span>$650</span></li>
+      <li><span>Cream Dachshund</span> <span>$700</span></li>
+      <li><span>Black &amp; Tan Dachshund</span> <span>$750</span></li>
+      <li><span>Rare Color Dachshund</span> <span>$800</span></li>
     </ul>
   </section>
 
-  <section>
-    <h2>Available Puppies</h2>
-
-    <div class="puppy-list">
-
-      <div class="puppy-card">
-        <img src="images/puppy1.jpg" alt="Brownie">
-        <h3>Brownie</h3>
-        <p>Male, 8 weeks old</p>
-        <p>Healthy and playful. Ready for a loving home.</p>
-      </div>
-
-      <div class="puppy-card">
-        <img src="images/puppy2.jpg" alt="Luna">
-        <h3>Luna</h3>
-        <p>Female, 6 weeks old</p>
-        <p>Sweet and gentle. Great with kids and other pets.</p>
-      </div>
-
-      <div class="puppy-card">
-        <img src="images/puppy3.jpg" alt="Max">
-        <h3>Max</h3>
-        <p>Male, 7 weeks old</p>
-        <p>Friendly and energetic. Loves to play fetch.</p>
-      </div>
-
+  <section class="puppies">
+    <div class="puppy-card">
+      <img src="images/puppy1.jpg" alt="Puppy 1" />
+      <h3>Bruno</h3>
     </div>
+
+    <div class="puppy-card">
+      <img src="images/puppy2.jpg" alt="Puppy 2" />
+      <h3>Luna</h3>
+    </div>
+
+    <div class="puppy-card">
+      <img src="images/puppy3.jpg" alt="Puppy 3" />
+      <h3>Charlie</h3>
+    </div>
+
+    <div class="puppy-card">
+      <img src="images/puppy4.jpg" alt="Puppy 4" />
+      <h3>Bella</h3>
+    </div>
+    <!-- Add more puppies here -->
   </section>
 
-  <section>
-    <h2>Contact Us</h2>
-    <p>📞 WhatsApp: <a href="https://wa.me/1234567890">Chat with us</a></p>
-    <p>📘 Facebook: <a href="https://facebook.com/renavispuppies">Renavis Puppies</a></p>
-    <p>📧 Email: renavisdogs@example.com</p>
+  <section class="contact">
+    <h2>Get in Touch</h2>
+    <p>Ready to adopt or have questions? We’re just an email away.</p>
+    <p>📧 <a href="mailto:renavispuppies@gmail.com">renavispuppies@gmail.com</a></p>
   </section>
 
   <footer>
-    <p>&copy; 2020 Renavis Puppies. All rights reserved.</p>
+    &copy; 2020 Renavis Puppies. All rights reserved. Licensed &amp; Legitimate.
   </footer>
 
 </body>
